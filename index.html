@@ -44,6 +44,24 @@
     <meta name="msapplication-TileColor" content="#7c3aed" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
 
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme');
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else if (theme === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (isDark) document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          // ignore
+        }
+      })();
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -88,10 +106,10 @@
       }]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-7ITHoacU.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BAS5JvLY.css">
+    <script type="module" crossorigin src="/assets/index-D3Im8NsR.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BkkHNOJe.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
   </body>
 </html>
